@@ -356,7 +356,319 @@
           </div>
         </div>
       </aside>
+
+      <!-- Main content -->
+      <div class="flex-grow border h-100 main">
+        <div class="flex flex-col w-full h-full content">
+          <!-- Navbar -->
+          <div class="px-2 lg:px-5 py-6">
+            <div class="flex items-center gap-4">
+              <i class="ri-settings-3-fill ri-xl"></i>
+              <span class="text-lg text-color-nav-black">User Profile</span>
+            </div>
+          </div>
+
+          <!-- top taskbar -->
+          <div
+            class="taskbar bg-no-repeat bg-cover bg-center flex items-center justify-between px-3 sm:px-6 py-4"
+          >
+            <div class="flex items-center gap-4 w-full md:w-1/2">
+              <div class="flex gap-1 sm:gap-2 items-center">
+                <span class="text-c-black font-medium">Account</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="w-full h-full px-3 sm:px-6">
+            <div
+            class="py-4 flex items-center justify-between border-b stroke-color avatar"
+          >
+            <div class="w-28">
+              <span class="text-base font-bold text-c-black">Avatar:</span>
+            </div>
+            <div class="flex-grow w-full">
+              <img
+                id="profileImage"
+                class="w-12 h-12 rounded-full object-cover"
+                src="images/profile.png"
+                alt="Profile Image"
+              />
+            </div>
+            <div>
+              <button
+                class="text-2xl"
+                onclick="document.getElementById('fileInput').click()"
+              >
+                <i class="ri-edit-line"></i>
+              </button>
+              <input
+                id="fileInput"
+                type="file"
+                class="hidden"
+                accept="image/*"
+                onchange="handleFileChange(event)"
+              />
+            </div>
+          </div>
+            <!-- For nickname -->
+            <div class="border-b stroke-color nickname">
+              <div
+                id="nickname-div"
+                class="py-4 flex flex-col sm:flex-row items-start relative"
+              >
+                <div class="w-28">
+                  <label
+                    for="nickname-input"
+                    class="text-base font-bold text-c-black"
+                    >Name:</label
+                  >
+                </div>
+                <div
+                  class="flex-grow flex items-start justify-between w-full edit-nickname"
+                >
+                  <div class="w-full">
+                    <div
+                      class="flex items-start sm:items-center flex-col sm:flex-row gap-1 sm:gap-2 w-full"
+                    >
+                      <input
+                        type="text"
+                        id="nickname-input"
+                        class="text-c-black font-normal text-base sm:text-lg"
+                        disabled
+                        value="Administrator"
+                      />
+                      <p
+                        id="nickname-hint"
+                        class="text-xs sm:text-sm font-light text-c-black hidden pl-1 sm:pl-0"
+                      ></p>
+                    </div>
+                    <div
+                      id="nickname-buttons"
+                      class="mt-2 hidden flex gap-4 sm:gap-6"
+                    >
+                      <button
+                        class="bg-c-black text-white rounded-full px-10 py-1 sm:px-14 sm:py-2"
+                        type="submit"
+                      >
+                        OK
+                      </button>
+                      <button
+                        class="cancel-btn text-c-yellow px-8 py-1 sm:px-12 sm:py-2 rounded-full border border-c-yellow"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute right-0">
+                  <button
+                    id="nickname-edit"
+                    onclick="enableNicknameEdit('nickname-input','nickname-hint','nickname-buttons', 'nickname-edit', 'nickname-close','nickname-div')"
+                    class="text-2xl"
+                  >
+                    <i class="ri-edit-line"></i>
+                  </button>
+                  <i
+                    id="nickname-close"
+                    class="ri-close-circle-fill ri-lg cursor-pointer hidden"
+                    onclick="disableNicknameEdit('nickname-input','nickname-hint','nickname-buttons', 'nickname-edit', 'nickname-close','nickname-div')"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <!-- For email -->
+            <div class="border-b stroke-color email">
+              <div
+                id="email-div"
+                class="py-4 flex flex-col sm:flex-row items-start relative"
+              >
+                <div class="w-28">
+                  <span for="email" class="text-base font-bold text-c-black"
+                    >Email:</span
+                  >
+                </div>
+                <div
+                  class="flex-grow flex items-start justify-between w-full edit-email"
+                >
+                  <div class="w-full">
+                    <span
+                      id="email-heading"
+                      class="font-normal text-base sm:text-lg"
+                      >admin123@gmail.com</span
+                    >
+                    <div id="email-content" class="hidden">
+                      <div
+                        class="flex flex-col lg:flex-row items-start lg:items-center gap-1 sm:gap-2 w-full"
+                      >
+                        <input
+                          type="text"
+                          class="enabled-input text-c-black font-normal text-sm sm:text-base"
+                          placeholder="Please enter the email address"
+                        />
+
+                        <button
+                          class="text-xs sm:text-sm font-light text-c-black pl-1 sm:pl-0 text-c-sky"
+                        >
+                          Send verification code
+                        </button>
+                      </div>
+                      <div class="input-div relative mt-2">
+                        <div class="flex items-center h-full">
+                          <input
+                            type="text"
+                            class="text-c-black text-sm sm:text-base font-normal h-full"
+                            placeholder="Please enter your verification code"
+                          />
+                          <span
+                            class="bg-c-gray-4 text-sm sm:text-base px-2 h-full flex items-center border-l border-gray text-c-black"
+                          >
+                            Verification
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-2 flex gap-4 sm:gap-6">
+                        <button
+                          class="bg-c-black text-white rounded-full px-10 py-1 sm:px-14 sm:py-2"
+                          type="submit"
+                        >
+                          OK
+                        </button>
+                        <button
+                          class="cancel-btn text-c-yellow px-8 py-1 sm:px-12 sm:py-2 rounded-full border border-c-yellow"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute right-0">
+                  <button
+                    id="email-edit"
+                    class="text-2xl"
+                    onclick="enableEdit('email-content','email-heading', 'email-edit', 'email-close','email-div')"
+                  >
+                    <i class="ri-edit-line"></i>
+                  </button>
+                  <i
+                    id="email-close"
+                    class="ri-close-circle-fill ri-lg cursor-pointer hidden"
+                    onclick="disableEdit('email-content','email-heading', 'email-edit', 'email-close','email-div')"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <!-- For Password -->
+            <div class="border-b stroke-color password">
+              <div
+                id="password-div"
+                class="py-4 flex flex-col sm:flex-row items-start relative"
+              >
+                <div class="w-28">
+                  <span class="text-base font-bold text-c-black"
+                    >Password:</span
+                  >
+                </div>
+                <div
+                  class="flex-grow flex items-start justify-between w-full edit-password"
+                >
+                  <div class="w-full">
+                    <span
+                      id="password-heading"
+                      class="font-normal text-base sm:text-lg"
+                      >*************</span
+                    >
+                    <div id="password-content" class="hidden">
+                      <div
+                        class="flex flex-col lg:flex-row items-start lg:items-center gap-1 sm:gap-2 w-full"
+                      >
+                        <div class="input-div relative">
+                          <div class="flex items-center justify-between h-full">
+                            <input
+                              type="text"
+                              class="text-c-black text-sm sm:text-base font-normal h-full"
+                              placeholder="Please enter a new password"
+                            />
+                            <span
+                              class="bg-c-gray-4 h-full px-4 flex items-center border-l border-gray"
+                            >
+                              <i class="ri-eye-close-line hidden"></i>
+                              <i class="ri-eye-line"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <button
+                          class="text-xs sm:text-sm font-light text-c-black pl-1 sm:pl-0 text-c-sky"
+                        >
+                          Send verification code
+                        </button>
+                      </div>
+                      <div class="input-div relative mt-2">
+                        <div class="flex items-center h-full">
+                          <input
+                            type="text"
+                            class="text-c-black text-sm sm:text-base font-normal h-full"
+                            placeholder="Please enter your verification code"
+                          />
+                          <span
+                            class="bg-c-gray-4 text-sm sm:text-base px-2 h-full flex items-center border-l border-gray text-c-black"
+                          >
+                            Verification
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-2 flex gap-4 sm:gap-6">
+                        <button
+                          class="bg-c-black text-white rounded-full px-10 py-1 sm:px-14 sm:py-2"
+                          type="submit"
+                        >
+                          OK
+                        </button>
+                        <button
+                          class="cancel-btn text-c-yellow px-8 py-1 sm:px-12 sm:py-2 rounded-full border border-c-yellow"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div></div>
+                </div>
+                <div class="absolute right-0">
+                  <button
+                    id="password-edit"
+                    class="text-2xl"
+                    onclick="enableEdit('password-content','password-heading','password-edit','password-close','password-div')"
+                  >
+                    <i class="ri-edit-line"></i>
+                  </button>
+                  <i
+                    id="password-close"
+                    class="ri-close-circle-fill ri-lg cursor-pointer hidden"
+                    onclick="disableEdit('password-content','password-heading','password-edit','password-close','password-div')"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function handleFileChange(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const imgElement = document.getElementById('profileImage');
+            imgElement.src = e.target.result; // Update the image preview
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
     <script defer src="script/sidebar.js"></script>
-    
+    <script src="script/account.js"></script>
   </body>
 </html>
