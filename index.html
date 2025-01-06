@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Account Page</title>
+    <link rel="stylesheet" href="styles/custom.css" />
+    <link rel="stylesheet" href="styles/root.css" />
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/tour.min.css" />
+  </head>
+  <body class="w-full h-screen">
+    <main class="w-full h-full flex cm account">
+      <!-- Sidebar -->
+      <aside class="h-full relative">
+        <input type="checkbox" class="hidden" id="sidebar-toggle" />
+        <label
+          for="sidebar-toggle"
+          class="absolute lg:hidden top-1 -right-8 px-1"
+        >
+          <i class="ri-bar-chart-horizontal-line"></i>
+        </label>
+        <div class="h-full sidebar">
+          <div class="sidebar-container">
+            <div class="p-6">
+              <a href="">
+                <img class="w-20" src="/images/logo.png" alt="Dots Logo" />
+              </a>
+            </div>
+            <div class="sidebar-content">
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
+                    href="overview.html"
+                  >
+                    <span class="font-normal"> Overview </span>
+                    <i
+                      class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl big-right-arrow"
+                    ></i>
+                  </a>
+                </li>
+                <li>
+                  <div
+                    role="button"
+                    onclick="toggleDropMenu(this)"
+                    class="drop-menu cursor-pointer rounded-r-lg"
+                  >
+                    <div
+                      class="w-full px-6 py-3 flex justify-between items-center"
+                      href="#"
+                    >
+                      <span class="font-normal"> Reports and Analytics </span>
+                      <i
+                        class="ri-arrow-right-s-line text-c-yellow transition-all text-2xl big-right-arrow"
+                      ></i>
+                    </div>
+                    <ul class="drop-list text-sm space-y-1">
+                      <li>
+                        <a
+                          href="system-setting-basic-page.html"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Activity Reports</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Custom Graph</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div
+                    role="button"
+                    onclick="toggleDropMenu(this)"
+                    class="drop-menu cursor-pointer rounded-r-lg"
+                  >
+                    <div
+                      class="w-full px-6 py-3 flex justify-between items-center"
+                      href="#"
+                    >
+                      <span class="font-normal"> System Settings </span>
+                      <i
+                        class="ri-arrow-right-s-line text-c-yellow transition-all text-2xl big-right-arrow"
+                      ></i>
+                    </div>
+                    <ul class="drop-list text-sm space-y-1">
+                      <li>
+                        <a
+                          href="system-setting-basic-page.html"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Basic</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Menu</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="system-setting-notice.html"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Notice</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Intranet Access</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div
+                    role="button"
+                    onclick="toggleDropMenu(this)"
+                    class="drop-menu cursor-pointer rounded-r-lg"
+                  >
+                    <div
+                      class="w-full px-6 py-3 flex justify-between items-center"
+                      href="#"
+                    >
+                      <span class="font-normal"> User Management </span>
+                      <i
+                        class="ri-arrow-right-s-line text-c-yellow transition-all text-2xl big-right-arrow"
+                      ></i>
+                    </div>
+                    <ul class="drop-list text-sm space-y-1">
+                      <li>
+                        <a
+                          href="admin&users-users&groups.html"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Users &amp; Groups </span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="system-setting-role.html"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Role</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="admin&user-document-permission.html"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Document Permission</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Intranet Access</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow right-arrow text-2xl"
+                          ></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div
+                    role="button"
+                    onclick="toggleDropMenu(this)"
+                    class="drop-menu cursor-pointer rounded-r-lg"
+                  >
+                    <div
+                      class="w-full px-6 py-3 flex justify-between items-center"
+                      href="#"
+                    >
+                      <span class="font-normal">Client Management</span>
+                      <i
+                        class="ri-arrow-right-s-line text-c-yellow transition-all text-2xl big-right-arrow"
+                      ></i>
+                    </div>
+                    <ul class="drop-list text-sm space-y-1">
+                      <li>
+                        <a
+                          id="Client"
+                          class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center subdrop"
+                          onclick="event.stopPropagation();toggleSubDropMenu('subdrop-menu2', this)"
+                        >
+                          <span>Client</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow text-2xl subdrop-right-arrow"
+                          ></i>
+                        </a>
+                        <ul
+                          class="drop-list text-sm space-y-1 hidden"
+                          id="subdrop-menu2"
+                        >
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>Client List</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>Group</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>Role</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>User</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a
+                          id="Company"
+                          class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center subdrop"
+                          onclick="event.stopPropagation();toggleSubDropMenu('subdrop-menu', this)"
+                        >
+                          <span>Company</span>
+                          <i
+                            class="ri-arrow-right-s-line text-c-yellow text-2xl subdrop-right-arrow"
+                          ></i>
+                        </a>
+                        <ul
+                          class="drop-list text-sm space-y-1 hidden"
+                          id="subdrop-menu"
+                        >
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>Company List</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>Group</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>Role</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            >
+                              <span>User</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div
+                    role="button"
+                    onclick="toggleDropMenu(this)"
+                    class="drop-menu cursor-pointer rounded-r-lg"
+                  >
+                    <div
+                      class="w-full px-6 py-3 flex justify-between items-center"
+                      href="#"
+                    >
+                      <span class="font-normal">User Profile</span>
+                      <i
+                        class="ri-arrow-right-s-line text-c-yellow transition-all text-2xl big-right-arrow"
+                      ></i>
+                    </div>
+                    <ul class="drop-list text-sm space-y-1">
+                      <li class="py-1">
+                        <a
+                          href="index.html"
+                          class="block py-3 px-8 rounded-r-md w-full flex justify-between items-center"
+                        >
+                          <span class="font-normal">Account</span>
+                          
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="flex-grow border h-100 main">
+        <div class="flex flex-col w-full h-full content">
+          <!-- Navbar -->
+          <div class="px-2 lg:px-5 py-6">
+            <div class="flex items-center gap-4">
+              <i class="ri-settings-3-fill ri-xl"></i>
+              <span class="text-lg text-color-nav-black">User Profile</span>
+            </div>
+          </div>
+
+          <!-- top taskbar -->
+          <div
+            class="taskbar bg-no-repeat bg-cover bg-center flex items-center justify-between px-3 sm:px-6 py-4"
+          >
+            <div class="flex items-center gap-4 w-full md:w-1/2">
+              <div class="flex gap-1 sm:gap-2 items-center">
+                <span class="text-c-black font-medium">Account</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="w-full h-full px-3 sm:px-6">
+            <div
+            class="py-4 flex items-center justify-between border-b stroke-color avatar"
+          >
+            <div class="w-28">
+              <span class="text-base font-bold text-c-black">Avatar:</span>
+            </div>
+            <div class="flex-grow w-full">
+              <img
+                id="profileImage"
+                class="w-12 h-12 rounded-full object-cover"
+                src="images/profile.png"
+                alt="Profile Image"
+              />
+            </div>
+            <div>
+              <button
+                class="text-2xl"
+                onclick="document.getElementById('fileInput').click()"
+              >
+                <i class="ri-edit-line"></i>
+              </button>
+              <input
+                id="fileInput"
+                type="file"
+                class="hidden"
+                accept="image/*"
+                onchange="handleFileChange(event)"
+              />
+            </div>
+          </div>
+            <!-- For nickname -->
+            <div class="border-b stroke-color nickname">
+              <div
+                id="nickname-div"
+                class="py-4 flex flex-col sm:flex-row items-start relative"
+              >
+                <div class="w-28">
+                  <label
+                    for="nickname-input"
+                    class="text-base font-bold text-c-black"
+                    >Name:</label
+                  >
+                </div>
+                <div
+                  class="flex-grow flex items-start justify-between w-full edit-nickname"
+                >
+                  <div class="w-full">
+                    <div
+                      class="flex items-start sm:items-center flex-col sm:flex-row gap-1 sm:gap-2 w-full"
+                    >
+                      <input
+                        type="text"
+                        id="nickname-input"
+                        class="text-c-black font-normal text-base sm:text-lg"
+                        disabled
+                        value="Administrator"
+                      />
+                      <p
+                        id="nickname-hint"
+                        class="text-xs sm:text-sm font-light text-c-black hidden pl-1 sm:pl-0"
+                      ></p>
+                    </div>
+                    <div
+                      id="nickname-buttons"
+                      class="mt-2 hidden flex gap-4 sm:gap-6"
+                    >
+                      <button
+                        class="bg-c-black text-white rounded-full px-10 py-1 sm:px-14 sm:py-2"
+                        type="submit"
+                      >
+                        OK
+                      </button>
+                      <button
+                        class="cancel-btn text-c-yellow px-8 py-1 sm:px-12 sm:py-2 rounded-full border border-c-yellow"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute right-0">
+                  <button
+                    id="nickname-edit"
+                    onclick="enableNicknameEdit('nickname-input','nickname-hint','nickname-buttons', 'nickname-edit', 'nickname-close','nickname-div')"
+                    class="text-2xl"
+                  >
+                    <i class="ri-edit-line"></i>
+                  </button>
+                  <i
+                    id="nickname-close"
+                    class="ri-close-circle-fill ri-lg cursor-pointer hidden"
+                    onclick="disableNicknameEdit('nickname-input','nickname-hint','nickname-buttons', 'nickname-edit', 'nickname-close','nickname-div')"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <!-- For email -->
+            <div class="border-b stroke-color email">
+              <div
+                id="email-div"
+                class="py-4 flex flex-col sm:flex-row items-start relative"
+              >
+                <div class="w-28">
+                  <span for="email" class="text-base font-bold text-c-black"
+                    >Email:</span
+                  >
+                </div>
+                <div
+                  class="flex-grow flex items-start justify-between w-full edit-email"
+                >
+                  <div class="w-full">
+                    <span
+                      id="email-heading"
+                      class="font-normal text-base sm:text-lg"
+                      >admin123@gmail.com</span
+                    >
+                    <div id="email-content" class="hidden">
+                      <div
+                        class="flex flex-col lg:flex-row items-start lg:items-center gap-1 sm:gap-2 w-full"
+                      >
+                        <input
+                          type="text"
+                          class="enabled-input text-c-black font-normal text-sm sm:text-base"
+                          placeholder="Please enter the email address"
+                        />
+
+                        <button
+                          class="text-xs sm:text-sm font-light text-c-black pl-1 sm:pl-0 text-c-sky"
+                        >
+                          Send verification code
+                        </button>
+                      </div>
+                      <div class="input-div relative mt-2">
+                        <div class="flex items-center h-full">
+                          <input
+                            type="text"
+                            class="text-c-black text-sm sm:text-base font-normal h-full"
+                            placeholder="Please enter your verification code"
+                          />
+                          <span
+                            class="bg-c-gray-4 text-sm sm:text-base px-2 h-full flex items-center border-l border-gray text-c-black"
+                          >
+                            Verification
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-2 flex gap-4 sm:gap-6">
+                        <button
+                          class="bg-c-black text-white rounded-full px-10 py-1 sm:px-14 sm:py-2"
+                          type="submit"
+                        >
+                          OK
+                        </button>
+                        <button
+                          class="cancel-btn text-c-yellow px-8 py-1 sm:px-12 sm:py-2 rounded-full border border-c-yellow"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute right-0">
+                  <button
+                    id="email-edit"
+                    class="text-2xl"
+                    onclick="enableEdit('email-content','email-heading', 'email-edit', 'email-close','email-div')"
+                  >
+                    <i class="ri-edit-line"></i>
+                  </button>
+                  <i
+                    id="email-close"
+                    class="ri-close-circle-fill ri-lg cursor-pointer hidden"
+                    onclick="disableEdit('email-content','email-heading', 'email-edit', 'email-close','email-div')"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <!-- For Password -->
+            <div class="border-b stroke-color password">
+              <div
+                id="password-div"
+                class="py-4 flex flex-col sm:flex-row items-start relative"
+              >
+                <div class="w-28">
+                  <span class="text-base font-bold text-c-black"
+                    >Password:</span
+                  >
+                </div>
+                <div
+                  class="flex-grow flex items-start justify-between w-full edit-password"
+                >
+                  <div class="w-full">
+                    <span
+                      id="password-heading"
+                      class="font-normal text-base sm:text-lg"
+                      >*************</span
+                    >
+                    <div id="password-content" class="hidden">
+                      <div
+                        class="flex flex-col lg:flex-row items-start lg:items-center gap-1 sm:gap-2 w-full"
+                      >
+                        <div class="input-div relative">
+                          <div class="flex items-center justify-between h-full">
+                            <input
+                              type="text"
+                              class="text-c-black text-sm sm:text-base font-normal h-full"
+                              placeholder="Please enter a new password"
+                            />
+                            <span
+                              class="bg-c-gray-4 h-full px-4 flex items-center border-l border-gray"
+                            >
+                              <i class="ri-eye-close-line hidden"></i>
+                              <i class="ri-eye-line"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <button
+                          class="text-xs sm:text-sm font-light text-c-black pl-1 sm:pl-0 text-c-sky"
+                        >
+                          Send verification code
+                        </button>
+                      </div>
+                      <div class="input-div relative mt-2">
+                        <div class="flex items-center h-full">
+                          <input
+                            type="text"
+                            class="text-c-black text-sm sm:text-base font-normal h-full"
+                            placeholder="Please enter your verification code"
+                          />
+                          <span
+                            class="bg-c-gray-4 text-sm sm:text-base px-2 h-full flex items-center border-l border-gray text-c-black"
+                          >
+                            Verification
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-2 flex gap-4 sm:gap-6">
+                        <button
+                          class="bg-c-black text-white rounded-full px-10 py-1 sm:px-14 sm:py-2"
+                          type="submit"
+                        >
+                          OK
+                        </button>
+                        <button
+                          class="cancel-btn text-c-yellow px-8 py-1 sm:px-12 sm:py-2 rounded-full border border-c-yellow"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div></div>
+                </div>
+                <div class="absolute right-0">
+                  <button
+                    id="password-edit"
+                    class="text-2xl"
+                    onclick="enableEdit('password-content','password-heading','password-edit','password-close','password-div')"
+                  >
+                    <i class="ri-edit-line"></i>
+                  </button>
+                  <i
+                    id="password-close"
+                    class="ri-close-circle-fill ri-lg cursor-pointer hidden"
+                    onclick="disableEdit('password-content','password-heading','password-edit','password-close','password-div')"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function handleFileChange(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const imgElement = document.getElementById('profileImage');
+            imgElement.src = e.target.result; // Update the image preview
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+    <script defer src="script/sidebar.js"></script>
+    <script src="script/account.js"></script>
+  </body>
+</html>
