@@ -381,36 +381,39 @@
 
           <!-- Content -->
           <div class="w-full h-full px-3 sm:px-6">
-            <div
-            class="py-4 flex items-center justify-between border-b stroke-color avatar"
-          >
-            <div class="w-28">
-              <span class="text-base font-bold text-c-black">Avatar:</span>
+
+            <!-- For Avatar -->
+            <div class="py-4 flex items-center justify-between border-b stroke-color avatar">
+              <div class="w-28">
+                <span class="text-base font-bold text-c-black">Avatar:</span>
+              </div>
+              <div class="flex-grow w-full relative">
+                <img
+                  id="profileImage"
+                  class="w-14 h-14 rounded-full object-cover cursor-pointer"
+                  src="images/profile.png"
+                  alt="Profile Image"
+                  onclick="document.getElementById('fileInput').click()"
+                  />
+                  <div class="absolute top-9 left-10 bg-white border rounded-full h-5 w-5 flex items-center justify-center cursor-pointer" onclick="document.getElementById('fileInput').click()">
+                    <i class="ri-pencil-line ri-sm"></i>
+                  </div>
+                
+              </div>
+            
+              <!-- Hidden File Input -->
+              <div>
+                <input
+                  id="fileInput"
+                  type="file"
+                  class="hidden"
+                  accept="image/*"
+                  onchange="handleFileChange(event)"
+                />
+              </div>
             </div>
-            <div class="flex-grow w-full">
-              <img
-                id="profileImage"
-                class="w-12 h-12 rounded-full object-cover"
-                src="images/profile.png"
-                alt="Profile Image"
-              />
-            </div>
-            <div>
-              <button
-                class="text-2xl"
-                onclick="document.getElementById('fileInput').click()"
-              >
-                <i class="ri-edit-line"></i>
-              </button>
-              <input
-                id="fileInput"
-                type="file"
-                class="hidden"
-                accept="image/*"
-                onchange="handleFileChange(event)"
-              />
-            </div>
-          </div>
+            
+            
             <!-- For nickname -->
             <div class="border-b stroke-color nickname">
               <div
